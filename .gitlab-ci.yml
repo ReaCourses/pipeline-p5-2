@@ -7,7 +7,7 @@ variables:
 
 validate-django-settings:
   stage: validate
-  before_script:
+  before_sctipt:
     - python3 -m venv $VENV_PATH
     - source $VENV_PATH/bin/activate
     - pip install --upgrade pip
@@ -16,7 +16,6 @@ validate-django-settings:
     - echo "Проверка настроек Django"
     - python3 manage.py check
     - echo "Настройки валидны"
-
 
 validate-migrations:
   stage: validate
@@ -30,7 +29,6 @@ validate-migrations:
     - python3 manage.py makemigrations --check --dry-run
     - echo "Миграции валидны"
 
-
 test-staticfiles:
   stage: test
   before_script:
@@ -39,6 +37,6 @@ test-staticfiles:
     - pip install --upgrade pip
     - pip install -r requirements.txt
   script:
-    - echo "Проверка статик-файлов Django"
+    - echo "Проверка статис-файлов Django"
     - python3 manage.py collectstatic --noinput --dry-run
     - echo "Статик-файлы валидны"
