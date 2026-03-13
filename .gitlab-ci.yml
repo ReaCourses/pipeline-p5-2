@@ -37,6 +37,6 @@ test-staticfiles:
     - pip install --upgrade pip
     - pip install -r requirements.txt
   script:
-    - echo "Проверка статис-файлов Django"
+    - echo "Проверка статик-файлов Django"
     - python3 manage.py collectstatic --noinput --dry-run
-    - echo "Статик-файлы валидны"
+    - echo "Статики валидны"
